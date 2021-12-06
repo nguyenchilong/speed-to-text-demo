@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .row
+    form(action='/upload' enctype='multipart/form-data' method='post')
+      .mb-3
+        label.form-label(for='media')
+          | Choose Media
+          i (mp4/mp3)
+        input#media.form-control(type='file' name='media')
+        span.form-text.text-muted please upload file less 1 minute length for demo
+      button.btn.btn-primary(type='submit') Submit
+  .clearfix &nbsp;
+  .row
+    .input-group
+      span.input-group-text Transcript
+      textarea.form-control(rows='6' style='width: 100%;' aria-label='Transcript')= transcript
+      span.form-text.text-muted
+        | This content only extract from media and show for view with demo mode and without any interaction here
